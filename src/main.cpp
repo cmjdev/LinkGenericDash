@@ -27,13 +27,13 @@ void buildData(const byte frameIndex, const byte index, const short data)
   // component precision and mantissa values to place the decimal correctly
   char buffer[50];
   // set precision vvs0
-  sprintf(buffer, "%svvs0=%i", s.id, s.prec);
+  sprintf(buffer, "%s.vvs0=%i", s.id, s.prec);
   sendData(buffer);
   // set mantissa vvs1 not needed
   // sprintf(buffer, "%svvs1=%i", s.id, countDigits(nextion) - s.prec);
   // sendData(buffer);
   // send value
-  sprintf(buffer, "%sval=%i", s.id, nextion);
+  sprintf(buffer, "%s.val=%i", s.id, nextion);
 }
 
 void onReceive(const int packetSize)
